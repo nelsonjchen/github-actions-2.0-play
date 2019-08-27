@@ -15,3 +15,7 @@ jobs:
       run: |
         echo Add other actions to build,
         echo test, and deploy your project.
+  macos:
+    runs-on: macOS-latest
+    steps:
+    - run: system_profiler -detailLevel full
