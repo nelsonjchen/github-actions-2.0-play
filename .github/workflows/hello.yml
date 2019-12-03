@@ -5,17 +5,11 @@ on: [push]
 jobs:
   build:
 
-    runs-on: ubuntu-latest
-    
+    runs-on: windows-latest
+
     steps:
-    - uses: actions/checkout@v1
-    - name: Run a one-line script
-      run: echo Hello, world!
-    - name: Run a multi-line script
+    - name: Can MSI install from the internet?
       run: |
-        echo Add other actions to build,
-        echo test, and deploy your project.
-  macos:
-    runs-on: macOS-latest
-    steps:
-    - run: system_profiler -detailLevel full
+        msiexec /i https://download.microsoft.com/download/7/9/6/796EF2E4-801B-4FC4-AB28-B59FBF6D907B/VCForPython27.msi /qn /L*V! "C:\msilog.log"
+        type msilog.log
+
