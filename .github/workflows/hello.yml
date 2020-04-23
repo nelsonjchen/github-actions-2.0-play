@@ -8,5 +8,4 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - run: \id            
-
+    - run: id
